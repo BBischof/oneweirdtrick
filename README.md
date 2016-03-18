@@ -1,2 +1,61 @@
-# oneweirdtrick
-The Centers for Disease Control and Prevention’s Wide-ranging Online Data for Epidemiological Research (WONDER) data retrieval system provides access to many types of public health information. Mortality and fertility counts for multiple years across standard geographical subdivisions broken down by race, gender, 5-year age groups, etc. are just some of the data available through this system. Though a vast array of data are available through WONDER, counts that fall between 0 and 9 are replaced with the word “Suppressed,” generating missing values, and hindering research agendas. This post describes a new method to recover some of these suppressed counts.
+# “One Weird Trick” to Recover Suppressed Counts from CDC’s WONDER
+
+## Introduction
+The Centers for Disease Control and Prevention’s Wide-ranging Online Data for Epidemiological Research (WONDER) data retrieval system provides access to many types of public health information. Mortality and fertility counts for multiple years across standard geographical subdivisions broken down by race, gender, 5-year age groups, etc. are just some of the data available through this system. Though an immense assortment of data are available through WONDER, counts returned that fall between 0 and 9 are replaced with the word “Suppressed,” generating missing values, and hindering research agendas. This article presents a new method to recover some of these suppressed counts and compares this method to leading alternative data imputation approaches.
+
+## Method
+It’s really quite simple to recover many counts suppressed by CDC’s WONDER, it just takes, as the spam advertisements claim, this “one weird trick.” And, as expected, the trick involves algebra any 5th grader can do. 
+
+To recover a set of desired data from CDC’s WONDER, we subtract the difference between the entire set of data and the set of desired data from the entire set of data. Equations 1.a and 1.b in the following tables present this formulation formally and informally.
+
+| Equation 1.a                                                                       |
+|:-----------------------------------------------------------------------------------|
+| what you want = a lot of what they have - (a lot of what they have - what you want)|
+
+| Equation 1.b  |
+|:--------------|
+|Y = X - (X - Y)|
+
+As an example, let’s query infant mortality rates for all US counties in 2013 using the default method. Go to CDC’s WONDER home page and click the link [Multiple cause of death (Detailed Mortality)](http://wonder.cdc.gov/mcd.html). Click the [Data Request](http://wonder.cdc.gov/mcd-icd10.html) link from the Current Multiple Cause of Death Data section. Scroll down and click the “I Agree” button to agree to the terms and conditions for accessing these data. To make this data request, most of the default settings are fine, but let’s select the additional following options: 
+* From the Organize table layout section, select “County” from the And By menu
+* From the Select demographics section, click the radial button next to Single-Year Ages
+* From the Select demographics section, select “< 1 year” from the Pick between list
+* From the Select year and month section, select “+ 2013” from the Year/Month list
+* From the Other options section, check the box next to Show Zero Values
+* From the Other options section, check the box next to Show Suppressed Values
+* From the Other options section, select “4” from the Precision menu
+
+Click the Send button and CDC’s WONDER will return infant mortality rates for all US counties in 2013, but not all of them. This returns the “what we want” part of Equation 1.a. Most of the counts returned, as you’ll notice, are suppressed. Taking counties as our unit of analysis gives us a response rate of approximately 14.86%. Figure 1 shows a map of these data.
+
+| Figure 1: Infant Mortality Rates among US Counties in 2013 (n=3,142) |
+|:---------------------------------------------------------------------|
+|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+
+In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: “+ 1999”, “+ 2000”, …, “+ 2013”. After selecting and submitting the specified years, CDC’s WONDER will return infant mortality rates for all US counties, where available, between 1999 to 2013. A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts. This action gives us the “a lot of what they have” part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than in the year 2013 alone, representing about 81.51% of these counties.
+
+| Figure 2: Infant Mortality Rates among US Counties years 1999 to 2013 (n=3,142) |
+|:--------------------------------------------------------------------------------|
+|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+
+Recall from Equation 1.a, the “one weird trick” involves subtracting the “(a lot of what they have – what you want)” part from the “a lot of what they have” part, the second term which we got in the construction of Figure 2. To get the “(a lot of what they have – what you want)” piece of the equation, we accept the defaults settings in WONDER with the following exceptions:
+* From the Organize table layout section, select “County” from the And By menu
+* From the Select demographics section, click the radial button next to Single-Year Ages
+* From the Select demographics section, select “< 1 year” from the Pick between list
+* From the Select year and month section, select “+ 1999”, “+ 2000”, …, “+ 2012” from the Year/Month list
+* From the Other options section, check the box next to Show Zero Values
+* From the Other options section, check the box next to Show Suppressed Values
+* From the Other options section, select “4” from the Precision menu
+
+By clicking the Send button, CDC’s WONDER will return infant mortality rates for all US counties from 1999 to 2012. This action gives us the “(a lot of what they have – what you want)” part of Equation 1.a. Figure 3 shows infant mortality rates for all US counties over the years 1999 to 2012. The response rate among these counties is higher than that observed for the single example year (i.e., 2013) but lower than that for all the available years (i.e., 1999, 2000, …, 2013), representing approximately 80.43% of US counties.
+
+| Figure 3: Infant Mortality Rates among US Counties years 1999 to 2012 (n=3,142) |
+|:--------------------------------------------------------------------------------|
+|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+
+To recover suppressed infant mortality counts among US counties in 2013, we take the difference of the counts used to construct Figure 3 from those used to construct Figure 2 to construct Figure 4. This method greatly improves upon the naive approach and yields a higher response rate (80.43% as compared to 14.86%). 
+
+| Figure 4: Recovered Infant Mortality Rates among US Counties 2013 (n=3,142) |
+|:--------------------------------------------------------------------------------|
+|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+
+
