@@ -29,13 +29,13 @@ Click the Send button and CDC’s WONDER will return infant mortality rates for 
 
 | Figure 1: Infant Mortality Rates among US Counties in 2013 (n=3,142) |
 |:---------------------------------------------------------------------|
-|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+|![alt text](https://drive.google.com/file/d/0BzvTjKf40oXUUFR5Q2NjQjZJUnc/view?usp=sharing "Figure 1")|
 
 In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: “+ 1999”, “+ 2000”, …, “+ 2013”. After selecting and submitting the specified years, CDC’s WONDER will return infant mortality rates for all US counties, where available, between 1999 to 2013. A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts. This action gives us the “a lot of what they have” part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than in the year 2013 alone, representing about 81.51% of these counties.
 
 | Figure 2: Infant Mortality Rates among US Counties years 1999 to 2013 (n=3,142) |
 |:--------------------------------------------------------------------------------|
-|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+|![alt text](https://drive.google.com/file/d/0BzvTjKf40oXURDRyczBYM0pLb0U/view?usp=sharing "Figure 2")|
 
 Recall from Equation 1.a, the “one weird trick” involves subtracting the “(a lot of what they have – what you want)” part from the “a lot of what they have” part, the second term which we got in the construction of Figure 2. To get the “(a lot of what they have – what you want)” piece of the equation, we accept the defaults settings in WONDER with the following exceptions:
 * From the Organize table layout section, select “County” from the And By menu
@@ -50,12 +50,12 @@ By clicking the Send button, CDC’s WONDER will return infant mortality rates f
 
 | Figure 3: Infant Mortality Rates among US Counties years 1999 to 2012 (n=3,142) |
 |:--------------------------------------------------------------------------------|
-|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+|![alt text](https://drive.google.com/file/d/0BzvTjKf40oXUQWhvMGttRmNIcVU/view?usp=sharing "Figure 3")|
 
 To recover suppressed infant mortality counts among US counties in 2013, we take the difference of the counts used to construct Figure 3 from those used to construct Figure 2 to construct Figure 4. This method greatly improves upon the naive approach and yields a higher response rate (80.43% as compared to 14.86%). 
 
 | Figure 4: Recovered Infant Mortality Rates among US Counties 2013 (n=3,142) |
 |:--------------------------------------------------------------------------------|
-|![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")|
+|![alt text](https://drive.google.com/file/d/0BzvTjKf40oXUSGZhRFhSYkh0MkE/view?usp=sharing "Figure 4")|
 
 
