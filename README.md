@@ -31,7 +31,7 @@ Click the Send button and CDC’s WONDER will return infant mortality rates for 
 |:---------------------------------------------------------------------|
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888668/967684d4-ed10-11e5-9cf4-a0c420f658f7.png "Figure 1")|
 
-In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: “+ 1999”, “+ 2000”, …, “+ 2013”. After selecting and submitting the specified years, CDC’s WONDER will return infant mortality rates for all US counties, where available, between 1999 to 2013. A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts. This action gives us the “a lot of what they have” part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than in the year 2013 alone, representing about 81.51% of these counties.
+In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: “+ 1999”, “+ 2000”, …, “+ 2013”. After selecting and submitting the specified years, CDC’s WONDER will return infant mortality rates for all US counties, where available <sup>[1](#footnote1)</sup>, between 1999 to 2013. This action gives us the “a lot of what they have” part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than in the year 2013 alone, representing about 81.51% of these counties.
 
 | Figure 2: Infant Mortality Rates among US Counties years 1999 to 2013 (n=3,142) |
 |:--------------------------------------------------------------------------------|
@@ -57,3 +57,5 @@ To recover suppressed infant mortality counts among US counties in 2013, we take
 | Figure 4: Recovered Infant Mortality Rates among US Counties 2013 (n=3,142) |
 |:--------------------------------------------------------------------------------|
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888670/9677d456-ed10-11e5-9d4a-fa1b2873e93a.png "Figure 4")|
+
+<a name="footnote1">1</a>: A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts.
