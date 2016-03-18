@@ -57,5 +57,3 @@ To recover suppressed infant mortality counts among US counties in 2013, we take
 | Figure 4: Recovered Infant Mortality Rates among US Counties 2013 (n=3,142) |
 |:--------------------------------------------------------------------------------|
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888670/9677d456-ed10-11e5-9d4a-fa1b2873e93a.png "Figure 4")|
-
-
