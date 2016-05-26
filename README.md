@@ -5,7 +5,7 @@ The Centers for Disease Control and Prevention's Wide-ranging Online Data for Ep
 
 ### *Should this be done?*
 
-In short, yes. While the CDC has reasons for supressing these data points beyond on desire to speculate; the kind of simple derivation found below is well within the acceptable limits of deriving obfuscated information. Because the *missing* data is contained in other queries of the CDC data set, we are merely cross-referencing queries. 
+In short, yes. While the CDC has reasons for supressing these data points beyond our desire to speculate; the kind of simple derivation found below is well within the acceptable limits of deriving obfuscated information. Because the *missing* data is contained in other queries of the CDC data set, we are merely cross-referencing queries. 
 
 ## Method
 It's really quite simple to recover many counts suppressed by CDC's **WONDER**, it just takes, as the spam advertisements claim, this "one weird trick." And, as expected, the "trick" involves only simple algebra. 
@@ -36,7 +36,7 @@ To make this data request, most of the default settings are fine, but let's sele
 * From the **Other** options section: check the box next to Show Suppressed Values
 * From the **Other** options section: select "4" from the Precision menu
 
-Click the Send button and CDC's **WONDER** will return infant mortality rates for some US counties in 2013, but not all of them. This query is for the "what we want" part of Equation 1.a, and for those returned, it does provide us with the desired data. However, most of the counts returned, as you'll notice, are suppressed(2192 of them). Taking counties as our unit of analysis, this query gives us a response rate of approximately 14.86%. Figure 1 shows an example map of this data.
+Click the Send button and CDC's **WONDER** will return infant mortality rates for some US counties in 2013, but not all of them. This query is for the "what we want" part of Equation 1.a, and for those returned, it does provide us with the desired data. However, most of the counts returned, as you'll notice, are suppressed (2192 of them). Taking counties as our unit of analysis, this query gives us a response rate of approximately 14.86%. Figure 1 shows an example map of this data.
 
 | Figure 1: Infant Mortality Rates among US Counties in 2013 (n=3,142) |
 |:---------------------------------------------------------------------|
