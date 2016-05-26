@@ -1,4 +1,4 @@
-# "One Weird Trick" to Recover Suppressed Counts from CDC's **WONDER**
+# "One Weird Trick" to Recover Suppressed Counts from CDC's **WONDER** by Will Chernoff; edited by Bryan Bischof
 
 ## Introduction
 The Centers for Disease Control and Prevention's Wide-ranging Online Data for Epidemiological Research (**WONDER**) data retrieval system provides access to many types of public health information. Mortality and fertility counts for multiple years across standard geographical subdivisions--broken down by race, gender, 5-year age groups, etc.--are just some of the data sets available through this system. Though an immense assortment of data sets are available through **WONDER**, counts returned whose values fall between 0 and 9 are replaced with the word "Suppressed," generating missing values, and hindering research agendas. This article presents a new method to recover some of these suppressed counts.
