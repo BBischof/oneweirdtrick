@@ -71,6 +71,6 @@ To recover suppressed infant mortality counts among US counties in 2013, we take
 
 Consider a query `f(T,c)` where `T` are the years considered, and `c` ranges over each county. `f` takes values in the natural numbers. Now, observe that for year `x`, we have `f(x,c)` a vector a values with a set of unknowns `s_i` for `c_i` the corresponding set of counties. Then:
 
-| Equation 1.c                                                                   |
-|:-------------------------------------------------------------------------------|
-|`f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
+| Equation 1.c                                                                         |
+|:-------------------------------------------------------------------------------------|
+|`s_j = f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
