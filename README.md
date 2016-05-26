@@ -10,7 +10,7 @@ In short, yes. While the CDC has reasons for supressing these data points beyond
 ## Method
 It's really quite simple to recover many counts suppressed by CDC's **WONDER**, it just takes, as the spam advertisements claim, this "one weird trick." And, as expected, the "trick" involves only simple algebra. 
 
-To recover a set of desired data from CDC's **WONDER**, we subtract the difference between the entire set of data and the set of desired data from the entire set of data. Equations 1.a and 1.b in the following tables present this formulation formally and informally.
+To recover a set of desired data from CDC's **WONDER**, we subtract the difference between the entire set of data and the set of desired data from the entire set of data. Equations 1.a and 1.b in the following tables present this formulation informally and formally.
 
 | Equation 1.a                                                                       |
 |:-----------------------------------------------------------------------------------|
@@ -19,6 +19,12 @@ To recover a set of desired data from CDC's **WONDER**, we subtract the differen
 | Equation 1.b  |
 |:--------------|
 |`Y = X - (X - Y)`|
+
+Consider a query `f(T,c)` where `T` are the years considered, and `c` ranges over each county. `f` takes values in the natural numbers. Now, observe that for year `x`, we have `f(x,c)` a vector a values with a set of unknowns `s_i` for `c_i` the corresponding set of counties. Then:
+
+| Equation 1.c                                                                   |
+|:-------------------------------------------------------------------------------|
+|`f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
 
 As an example, let's walk through a query of infant mortality rates for all US counties in 2013 using the default method. 
 * Go to CDC's **WONDER** home page and click the link [Multiple cause of death (Detailed Mortality)](http://**wonder**.cdc.gov/mcd.html). 
@@ -70,11 +76,3 @@ To recover suppressed infant mortality counts among US counties in 2013, we take
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888670/9677d456-ed10-11e5-9d4a-fa1b2873e93a.png "Figure 4")|
 
 <b id="footnote1">1</b>: A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts. [↩](#a1)
-
-## A more mathematical representation of Equation 1
-
-Consider a query `f(T,c)` where `T` are the years considered, and `c` ranges over each county. `f` takes values in the natural numbers. Now, observe that for year `x`, we have `f(x,c)` a vector a values with a set of unknowns `s_i` for `c_i` the corresponding set of counties. Then:
-
-| Equation 1.c                                                                   |
-|:-------------------------------------------------------------------------------|
-|`f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
