@@ -40,7 +40,6 @@ Click the Send button and CDC's **WONDER** will return infant mortality rates fo
 |:---------------------------------------------------------------------|
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888668/967684d4-ed10-11e5-9cf4-a0c420f658f7.png "Figure 1")|
 
-<<<<<<< HEAD
 In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: “+ 1999”, “+ 2000”, …, “+ 2013”. After selecting and submitting the specified years, CDC’s WONDER will return infant mortality rates for all US counties, where available <sup id="a1">[1](#footnote1)</sup>, between 1999 to 2013. This action gives us the “a lot of what they have” part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than in the year 2013 alone, representing about 81.51% of these counties.
 =======
 In our effort to recover counts, we repeat the same steps taken to construct Figure 1, but this time we select all available years: `"+ 1999", "+ 2000", ..., "+ 2013"`. After selecting and submitting the specified years, CDC's **WONDER** will return infant mortality rates for all US counties, where available, between 1999 to 2013. As we have seen, data requests from CDC's **WONDER** can result in suppressed counts, and this is true even when counts are requested for a number of years. However, by requesting counts over multiple years, **WONDER** is less likely to suppress the returned counts(due to the counts being larger). This action gives us the "a lot of what they'll give" part of Equation 1.a. Figure 2 shows infant mortality rates for all US counties over the years 1999 to 2013. The response rate among these counties is much higher than it was in the query for year 2013 alone; representing about 81.51% of counties.
@@ -71,7 +70,6 @@ To recover suppressed infant mortality counts among US counties in 2013, we take
 |:--------------------------------------------------------------------------------|
 |![alt text](https://cloud.githubusercontent.com/assets/4267812/13888670/9677d456-ed10-11e5-9d4a-fa1b2873e93a.png "Figure 4")|
 
-<<<<<<< HEAD
 <b id="footnote1">1</b>: A data request from CDC’s WONDER can result in suppressed counts, even when counts are requested for a number of years. However, by requesting counts over multiple years, WONDER is less likely to suppress the returned counts. [↩](#a1)
 =======
 ## A more mathematical representation of Equation 1
@@ -81,4 +79,3 @@ Consider a query `f(T,c)` where `T` are the years considered, and `c` ranges ove
 | Equation 1.c                                                                   |
 |:-------------------------------------------------------------------------------|
 |`f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
->>>>>>> 923263dcc9240317cfb2d47f873604711d940357
