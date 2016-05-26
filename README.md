@@ -10,19 +10,15 @@ In short, yes. While the CDC has reasons for supressing these data points beyond
 ## Method
 It's really quite simple to recover many counts suppressed by CDC's **WONDER**, it just takes, as the spam advertisements claim, this "one weird trick." And, as expected, the "trick" involves only simple algebra. 
 
-To recover a set of desired data from CDC's **WONDER**, we subtract the difference between the entire set of data and the set of desired data from the entire set of data. Equations 1.a and 1.b in the following tables present this formulation informally and formally.
+To recover a set of desired data from CDC's **WONDER**, we subtract the difference between the entire set of data and the set of desired data from the entire set of data. Equations 1.a and 1.c in the following tables present this formulation informally and formally.
 
 | Equation 1.a                                                                       |
 |:-----------------------------------------------------------------------------------|
 | `what you want = a lot of what they'll give - (a lot of what they'll give - what you want)`|
 
-| Equation 1.b  |
-|:--------------|
-|`Y = X - (X - Y)`|
-
 Consider a query `f(T,c)` where `T` are the years considered, and `c` ranges over each county. `f` takes values in the natural numbers. Now, observe that for year `x`, we have `f(x,c)` a vector a values with a set of unknowns `s_i` for `c_i` the corresponding set of counties. Then:
 
-| Equation 1.c                                                                   |
+| Equation 1.b                                                                   |
 |:-------------------------------------------------------------------------------|
 |`f(x,c_j)=f(T,c_j)-f(T-x,c_j) for c_j those counties where f(T-x,c_j) is known.`| 
 
